@@ -1,11 +1,17 @@
-import { business } from '../data/site'
+import { business, phoneLink, whatsappLink } from '../data/site'
 
 export default function Footer() {
   return (
     <footer className="border-t border-nut-100">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-leaf-900/70 sm:flex-row sm:px-6">
         <p>© {new Date().getFullYear()} {business.name}. All rights reserved.</p>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
+          <a href={phoneLink} className="hover:text-nut-500">
+            {business.phone}
+          </a>
+          <a href={whatsappLink} target="_blank" rel="noreferrer" className="hover:text-nut-500">
+            WhatsApp
+          </a>
           <a href={business.facebook} target="_blank" rel="noreferrer" className="hover:text-nut-500">
             Facebook
           </a>

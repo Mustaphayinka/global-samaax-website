@@ -1,15 +1,19 @@
 // Business details shown across the site.
-// TODO: replace placeholders (phone, address, socials) with real details.
 export const business = {
   name: 'Global Samaax Food Ventures',
   shortName: 'Samaax Foods',
   tagline: 'Natural foods & drinks, made for healthy living.',
   city: 'Lagos, Nigeria',
   email: 'samax4foods@gmail.com',
-  phone: '+234 000 000 0000', // placeholder
-  whatsapp: '2340000000000', // placeholder, digits only for wa.me links
+  phone: '+234 803 238 5949',
+  whatsapp: '2348032385949', // digits only, for wa.me links
   facebook: 'https://www.facebook.com/SamaxFoods/',
 }
+
+export const phoneLink = `tel:+${business.whatsapp}`
+
+const whatsappGreeting = "Hello Samaax Foods! I'd like to place an order."
+export const whatsappLink = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(whatsappGreeting)}`
 
 // Used only if the API is unreachable, so the page never renders empty.
 // The source of truth lives in backend/app/data.py.

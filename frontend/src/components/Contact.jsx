@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { business } from '../data/site'
+import { business, phoneLink, whatsappLink } from '../data/site'
 
 const empty = { name: '', email: '', phone: '', message: '' }
 
@@ -42,15 +42,28 @@ export default function Contact() {
           <ul className="mt-8 space-y-3 text-nut-100">
             <li>📍 {business.city}</li>
             <li>
-              ✉️ <a href={`mailto:${business.email}`} className="underline-offset-4 hover:underline">{business.email}</a>
+              📞 <a href={phoneLink} className="underline-offset-4 hover:underline">{business.phone}</a>
             </li>
             <li>
-              💬{' '}
-              <a href={`https://wa.me/${business.whatsapp}`} className="underline-offset-4 hover:underline">
-                Chat on WhatsApp
-              </a>
+              ✉️ <a href={`mailto:${business.email}`} className="underline-offset-4 hover:underline">{business.email}</a>
             </li>
           </ul>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-[#25D366] px-6 py-3 font-semibold text-white transition hover:brightness-95"
+            >
+              Chat on WhatsApp
+            </a>
+            <a
+              href={phoneLink}
+              className="rounded-full border-2 border-nut-100/60 px-6 py-3 font-semibold text-nut-50 transition hover:bg-nut-50 hover:text-leaf-700"
+            >
+              Call us
+            </a>
+          </div>
         </div>
 
         <form onSubmit={submit} className="space-y-4 rounded-3xl bg-nut-50 p-6 text-leaf-900">
